@@ -4,7 +4,7 @@ A bot for discord that explores the functionality of the discord.js library.
 
 ## Setup
 
-After checking out the repository make sure to call *npm install* to pull all external libraries.
+After cloning the repository make sure to call *npm install* to pull all external libraries.
 Please create a **.env** file in your projects root directory and add the following with your bot token provided by discord:
 
 ```shell
