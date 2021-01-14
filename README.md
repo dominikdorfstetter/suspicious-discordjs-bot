@@ -1,10 +1,20 @@
-# NodeJS Typescript Starter 
+# Suspicious DiscordJS Bot
 
-This is a starter template for plain nodeJS projects.
+A bot for discord that explores the functionality of the discord.js library.
 
-## It includes
+## Setup
+
+After checking out the repository make sure to call *npm install* to pull all external libraries.
+Please create a **.env** file in your projects root directory and add the following with your bot token provided by discord:
+
+```shell
+DISCORDJS_BOT_TOKEN=
+```
+
+## Third party libraries and tools
     - Test-Setup with Jest
     - Typescript
+    - DiscordJS Library
 
 ## NPM Scripts
 
@@ -14,7 +24,7 @@ First compiles typescript code to plain javascript and then runs *dist/app.js*
 
 ### build
 
-Executes typescript compilation
+Just executes typescript compilation
 
 ### test
 
