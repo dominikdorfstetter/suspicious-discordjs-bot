@@ -21,6 +21,7 @@ const COMMAND_PREFIX = '$';
 // ON: connection ready
 client.on('ready', () => {
     log(`Logged in as ${client.user.tag}`, 'INFO');
+    log(`Waiting for events`, 'INFO');
 });
 
 // ON: message deletion
@@ -63,7 +64,7 @@ client.on('message', async (msg: Message) => {
                 await member.kick(REASON.join(' '));
                 await logChannel.send('')
             } else {
-                await msg.reply('Please provide an ID and a reason!');
+                await msg.reply('please provide an ID and a reason!');
             }
         }
 
@@ -71,12 +72,12 @@ client.on('message', async (msg: Message) => {
             if (args.length >= 3) {
                 const [ MEMBER_ID, days, ...reason ] = args;
                 if (!isNaN(+days) && +days > 0 && +days <= 90) {
-                    await msg.reply('Number of days is invalid, must be between 1 and 90 days');
+                    await msg.reply('number of days is invalid, must be between 1 and 90 days');
                 }
                 const member = await msg.guild.members.cache.get(MEMBER_ID);
                 await member.ban({days: +days, reason: reason.join(' ')});
             } else {
-                await msg.reply('Please provide an ID, reason and number of days the ban should last!');
+                await msg.reply('please provide an ID, reason and number of days the ban should last!');
             }
         }
 
@@ -84,12 +85,27 @@ client.on('message', async (msg: Message) => {
             if (args.length === 1) {
                 const prime: number = +args[0];
                 if (!isNaN(prime) && isPrime(prime)) {
-                    await msg.reply('Yes this is a prime number Balvin');
+                    await msg.reply('yes this is a prime number');
                 } else {
                     await msg.reply('I dunno what the fuck this is but it aint a prime number fuckhead');
                 }
             } else {
                 await msg.reply('Please provide an ID, reason and number of days the ban should last!');
+            }
+        }
+
+        if (CMD_NAME === 'calculatePrime') {
+            if (args.length === 1) {
+                const num: number = +args[0];
+                if (!isNaN(num) && num >= 0 && num <= 2000) {
+                    const numbers = Array.from(Array(num).keys());
+                    const primes = numbers.filter((el) => isPrime(el));
+                    await msg.reply(`Prime numbers until ${num} are: ${primes}`);
+                } else {
+                    await msg.reply('Number has to be equal or less than 2000');
+                }
+            } else {
+                await msg.reply('Please provide a number, reason and number of days the ban should last!');
             }
         }
 
@@ -106,7 +122,7 @@ client.on('message', async (msg: Message) => {
             $whereAmI // as it was requested by Balvin\n
             ping --> pong\n
             #######################################\n
-            (C) Dominik Dorfstetter 2021`);
+            (C) tasty 2021`);
         }
     }
 
