@@ -1,5 +1,5 @@
 {
-  "name": "node-typescript-starter",
+  "name": "suspicious-discordjs-bot",
   "version": "1.0.0",
   "description": "",
   "main": "dist/app.js",
@@ -52,5 +52,9 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/mocks.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/mocks.js"
     }
+  },
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
   }
 }
