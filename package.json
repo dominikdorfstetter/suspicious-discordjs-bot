@@ -13,6 +13,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0"
+  },
   "devDependencies": {
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.20",
@@ -52,9 +56,5 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/mocks.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/mocks.js"
     }
-  },
-  "dependencies": {
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0"
   }
 }
