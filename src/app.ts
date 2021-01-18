@@ -73,7 +73,7 @@ client.on('message', async (msg: Message) => {
                 const member = await msg.guild.members.cache.get(MEMBER_ID);
                 await member.ban({days: +days, reason: reason.join(' ')});
             } else {
-                await msg.reply('please provide an ID, reason and number of days the ban should last!');
+                await msg.reply('please provide an ID, number of days the ban should last and a reason!');
             }
         }
 
@@ -83,10 +83,10 @@ client.on('message', async (msg: Message) => {
                 if (!isNaN(prime) && isPrime(prime)) {
                     await msg.reply('yes this is a prime number');
                 } else {
-                    await msg.reply('I dunno what the fuck this is but it aint a prime number fuckhead');
+                    await msg.reply('this is not a prime number');
                 }
             } else {
-                await msg.reply('Please provide an ID, reason and number of days the ban should last!');
+                await msg.reply('Please provide a number to check!');
             }
         }
 
@@ -101,7 +101,7 @@ client.on('message', async (msg: Message) => {
                     await msg.reply('Number has to be equal or less than 2000');
                 }
             } else {
-                await msg.reply('Please provide a number, reason and number of days the ban should last!');
+                await msg.reply('Please provide a number!');
             }
         }
 
