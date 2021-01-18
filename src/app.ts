@@ -1,13 +1,9 @@
 import * as dotenv from 'dotenv';
-import {Client, Message, PartialMessage, TextChannel} from 'discord.js';
+import { Client, Message, PartialMessage, TextChannel } from 'discord.js';
 import { log } from "./helper";
+import { isPrime } from "./math";
 
-const isPrime = num => {
-    for(let i = 2; i < num; i++)
-        if(num % i === 0) return false;
-    return num > 1;
-}
-
+// Startup message
 log('Startup DiscordJS bot.', 'INFO');
 
 // Setup environment
@@ -134,7 +130,7 @@ client.on('message', async (msg: Message) => {
 
 // Discord: LOGIN
 client.login(process.env.DISCORDJS_BOT_TOKEN).catch((err: any) => {
-    log(`DiscordJS bot could'nt connect. ${err}`, 'ERROR');
+    log(`DiscordJS bot could'nt connect. ${err}`, "ERROR");
     process.exit(1);
 });
 
